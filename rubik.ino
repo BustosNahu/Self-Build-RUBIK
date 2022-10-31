@@ -6,15 +6,15 @@
 #define    DOWN_CLOSE          80
 #define    DOWN_OPEN          125
 
-#define    DOWN_CW            178
-#define    DOWN_MID            933
+#define    DOWN_CW            176
+#define    DOWN_MID            93
 
 #define    DOWN_CCW             5
 
 #define    BACK_CLOSE         0
 #define    BACK_OPEN          70
 
-#define    BACK_CW            175
+#define    BACK_CW            176
 #define    BACK_MID            88
 #define    BACK_CCW             2
 
@@ -51,8 +51,11 @@ boolean    DEBUG_SERIAL =         false;
 
 Servo  servo_a;
 Servo  servo_b;
+Servo  servo_c;
+Servo  servo_d;
 
-Cube myCube(servo_a,STEP_A_PIN_STEP,STEP_A_PIN_DIRECTION ,servo_b,STEP_B_PIN_STEP, STEP_B_PIN_DIRECTION);
+
+Cube myCube(servo_a,servo_c ,servo_b,servo_d);
 
 char cmd[128];                                 // bytes received buffer
 
@@ -62,9 +65,7 @@ void setup() {
   pinMode(2,OUTPUT);
 
   myCube.begin(HI_SPEED);                 // set HIGH servo's speed 
-  myCube.downSetLimits(DOWN_CLOSE, DOWN_OPEN, DOWN_CW,DOWN_MID, DOWN_CCW); // set limits for pinch and rotation servo's
-  myCube.backSetLimits(BACK_CLOSE, BACK_OPEN, BACK_CW, BACK_MID, BACK_CCW);
-  //myCube.seize();
+ 
   //Serial.println("OK bis hierher_1");
 
 }

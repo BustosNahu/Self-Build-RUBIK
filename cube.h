@@ -10,11 +10,9 @@ class Cube  {
   public:
      Cube(
        Servo  downPinch_pin,
-        int downRot_step_pin,
-        int downRot_dir_pin,
-        Servo  backPinch_pin,
-        int backRot_step_pin ,
-        int _backRot_dir_pin
+       Servo downRot_servo,
+       Servo  backPinch_pin,
+       Servo backRot_servo
       );
 
      void begin(int speed);
@@ -63,11 +61,10 @@ class Cube  {
 
   private:
      Servo  _downPinch_servo; 
-     int  _downRot_step_pin; 
-     int  _downRot_dir_pin; 
+     Servo _downRot_servo;
      Servo  _backPinch_servo;
-     int  _backRot_step_pin;     
-     int  _backRot_dir_pin;     
+     Servo _backRot_servo;
+   
 
      
      
